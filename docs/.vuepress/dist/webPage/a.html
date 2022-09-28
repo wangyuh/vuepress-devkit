@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>兼容问题 | 个人主页</title>
+    <meta name="description" content="Personal Website">
+    <link rel="icon" href="/images/photo.jpg">
+  <link rel="manifest" href="/images/photo.jpg">
+  <link rel="apple-touch-icon" href="/images/photo.jpg">
+  <meta http-quiv="pragma" cotent="no-cache">
+  <meta http-quiv="pragma" cotent="no-cache,must-revalidate">
+  <meta http-quiv="expires" cotent="0">
+    
+    <link rel="preload" href="/assets/css/0.styles.6aaa91c1.css" as="style"><link rel="preload" href="/assets/js/app.cfbcbb76.js" as="script"><link rel="preload" href="/assets/js/16.73d7db7e.js" as="script"><link rel="prefetch" href="/assets/js/10.f7f7161d.js"><link rel="prefetch" href="/assets/js/11.b20632c1.js"><link rel="prefetch" href="/assets/js/12.0246bbbc.js"><link rel="prefetch" href="/assets/js/13.28bda602.js"><link rel="prefetch" href="/assets/js/14.97519492.js"><link rel="prefetch" href="/assets/js/15.be4dbb4d.js"><link rel="prefetch" href="/assets/js/17.86983806.js"><link rel="prefetch" href="/assets/js/18.967110c4.js"><link rel="prefetch" href="/assets/js/2.858e80da.js"><link rel="prefetch" href="/assets/js/3.ba640331.js"><link rel="prefetch" href="/assets/js/4.cec81cc0.js"><link rel="prefetch" href="/assets/js/5.6854503b.js"><link rel="prefetch" href="/assets/js/6.50184266.js"><link rel="prefetch" href="/assets/js/7.29047d46.js"><link rel="prefetch" href="/assets/js/8.cf87f0c1.js"><link rel="prefetch" href="/assets/js/9.c98e7c1c.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.6aaa91c1.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container"><header class="navbar"><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><!----> <span class="site-name">个人主页</span></a> <div class="links" style="max-width:nullpx;"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/jsPage/" class="nav-link">JS</a></div><div class="nav-item"><a href="/lealeft/" class="nav-link">lealeft</a></div><div class="nav-item"><a href="/demo/" class="nav-link">demo</a></div><div class="nav-item"><a href="/gitCmd/" class="nav-link">git命令</a></div><div class="nav-item"><a href="/vuePage/" class="nav-link">vue</a></div><div class="nav-item"><a href="/webPage/" class="nav-link router-link-active">前端知识</a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar"><nav class="nav-links"><div class="nav-item"><a href="/jsPage/" class="nav-link">JS</a></div><div class="nav-item"><a href="/lealeft/" class="nav-link">lealeft</a></div><div class="nav-item"><a href="/demo/" class="nav-link">demo</a></div><div class="nav-item"><a href="/gitCmd/" class="nav-link">git命令</a></div><div class="nav-item"><a href="/vuePage/" class="nav-link">vue</a></div><div class="nav-item"><a href="/webPage/" class="nav-link router-link-active">前端知识</a></div> <!----></nav>  <ul class="sidebar-links"><li><div class="sidebar-group first collapsable"><p class="sidebar-heading open"><span>目录</span> <span class="arrow down"></span></p> <ul class="sidebar-group-items"><li><a href="/webPage/a.html" aria-current="page" class="active sidebar-link">兼容问题</a><ul class="sidebar-sub-headers"></ul></li><li><a href="/webPage/b.html" class="sidebar-link">css 样式问题</a></li></ul></div></li></ul> </div> <div class="page"> <div class="content"><h1 id="兼容问题"><a href="#兼容问题" class="header-anchor">#</a> 兼容问题</h1> <h3 id="ie11-语法错误页面空白问题"><a href="#ie11-语法错误页面空白问题" class="header-anchor">#</a> IE11 语法错误页面空白问题</h3> <div class="language-js line-numbers-mode"><pre class="language-js"><code>	npm install babel<span class="token operator">-</span>polyfil <span class="token operator">--</span>save<span class="token operator">-</span>dev <span class="token comment">//有说法不能安装在devDependencies</span>
+	<span class="token comment">//此处按vue-cli2为例</span>
+	<span class="token comment">//webpack-base-config.js修改配置</span>
+	module<span class="token punctuation">.</span>exports <span class="token operator">=</span> <span class="token punctuation">{</span>
+		entry<span class="token operator">:</span> <span class="token punctuation">{</span>
+			app<span class="token operator">:</span><span class="token punctuation">[</span><span class="token string">'babel-polyfill'</span><span class="token punctuation">,</span><span class="token string">'./src/main.js'</span><span class="token punctuation">]</span> <span class="token comment">//修改处</span>
+		<span class="token punctuation">}</span>，
+		<span class="token comment">// 可能引用的第三方插件报错 SCRIPT1003 缺少 &quot;:&quot; </span>
+		<span class="token comment">//如出现对该插件单独include处理一下</span>
+		<span class="token comment">// module: {</span>
+		<span class="token comment">// 	rules: [</span>
+		<span class="token comment">// 		{</span>
+		<span class="token comment">// 			test: /\.js$/,</span>
+		<span class="token comment">// 			loader: 'babel-loader',</span>
+		<span class="token comment">// 			include: [</span>
+		<span class="token comment">// 				resolve('node_modules/@packy-tang/vue-tinymce')</span>
+		<span class="token comment">// 			]</span>
+		<span class="token comment">// 		}</span>
+		<span class="token comment">// 	]</span>
+		<span class="token comment">// }</span>
+	<span class="token punctuation">}</span><span class="token punctuation">,</span> 
+</code></pre> <div class="line-numbers-wrapper"><span class="line-number">1</span><br><span class="line-number">2</span><br><span class="line-number">3</span><br><span class="line-number">4</span><br><span class="line-number">5</span><br><span class="line-number">6</span><br><span class="line-number">7</span><br><span class="line-number">8</span><br><span class="line-number">9</span><br><span class="line-number">10</span><br><span class="line-number">11</span><br><span class="line-number">12</span><br><span class="line-number">13</span><br><span class="line-number">14</span><br><span class="line-number">15</span><br><span class="line-number">16</span><br><span class="line-number">17</span><br><span class="line-number">18</span><br><span class="line-number">19</span><br><span class="line-number">20</span><br><span class="line-number">21</span><br></div></div></div> <div class="page-edit"><!----> <!----></div> <div class="page-nav"><p class="inner"><!----> <span class="next"><a href="/webPage/b.html">
+          css 样式问题
+        </a>
+        →
+      </span></p></div> </div> <!----></div></div>
+    <script src="/assets/js/app.cfbcbb76.js" defer></script><script src="/assets/js/16.73d7db7e.js" defer></script>
+  </body>
+</html>
